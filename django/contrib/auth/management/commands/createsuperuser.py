@@ -139,6 +139,7 @@ class Command(BaseCommand):
                         # Wrap any foreign keys in fake model instances
                         if field.remote_field:
                             fake_user_data[field_name] = field.remote_field.model(input_value)
+                            user_data[field_name] = field.remote_field.model(input_value)
 
                 # Get a password
                 while password is None:
